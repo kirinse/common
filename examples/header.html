@@ -10,9 +10,7 @@
     <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.js"></script>
     <![endif]-->
-    <script src="http://ee.4lo.me/js/seajs/seajs/2.2.1/sea.js"></script>
-    <script src="http://ee.4lo.me/js/seajs/seajs-combo/1.0.1/seajs-combo.js"></script>
-    <script src="http://ee.4lo.me/js/seajs/seajs-style/1.0.2/seajs-style.js"></script>
+    <script src="http://asset.kirin.com/js/??seajs/seajs/2.2.1/sea.js,seajs/seajs-combo/1.0.1/seajs-combo.js,seajs/seajs-style/1.0.2/seajs-style.js"></script>
     <script>
     var query = location.search.substring(1).split('&');
     var srcdir = 'src';
@@ -25,7 +23,7 @@
       srcdir = 'src-cov';
     }
     seajs.config({
-      base: "http://ee.4lo.me/js",
+      base: "http://asset.kirin.com/js",
       alias: {
         "$": 'jquery/jquery/1.7.2/jquery'
         ,"jquery": 'jquery/jquery/1.7.2/jquery'
@@ -62,8 +60,8 @@
         return uri;
       }],
       comboExcludes: {test: function(uri) {
-        return true;
-        // return uri.indexOf('http://assets.spmjs.org') === -1;
+        // return true;
+        return uri.indexOf('http://asset.kirin.com') === -1;
       }}
     });
     function resolve(file) {
