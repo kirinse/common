@@ -1,0 +1,263 @@
+@import url("alice-base");
+@import url("grid");
+/* 页眉块 header */
+.topbar-wrap .mobile .icon-mobile, .topmenu-item-dropdown .icon-dropdown, .topmenu-item-dropdown a:hover .icon-dropdown, .topmenu-item-dropdown-hover .icon-dropdown, #logo-noflash, .ui-logo-kirin, .nav-item .angle, #home .nav-item-link, #home .nav-item-link:hover, #lotto .nav-item-link, #lotto .nav-item-link:hover, #lotto .nav-item-link-active, #casino .nav-item-link, #casino .nav-item-link:hover, #casino .nav-item-link-active, #sports .nav-item-link, #sports .nav-item-link:hover, #sports .nav-item-link-active, #game .nav-item-link, #game .nav-item-link:hover, #game .nav-item-link-active, #promo .nav-item-link, #promo .nav-item-link:hover, #promo .nav-item-link-active, #help .icon-nav-split, #help .nav-item-link, #help .nav-item-link:hover, #help .nav-item-link-active, .slide-number a, .slide-number .slide-number-active, #product-lotto .title-link, #product-casino .title-link, #product-sports .title-link, #product-game .title-link, .product-item .link .icon-youhui, .about-item .icon-title-safety, .about-item .icon-title-vip, .about-item .icon-title-abc, .about-item .icon-about-safety, .about-item .icon-about-vip, .about-item .icon-about-abc, .partner-item .more .icon-more, .partner-item .cnt .business-pic .qq, .partner-item .cnt .business-pic .wechat, .partner-item .cnt .business-pic .weibo, .partner-item .cnt .business-pic .tweibo, .partner-item .cnt .browser-pic .b360, .partner-item .cnt .browser-pic .ie, .partner-item .cnt .browser-pic .firefox, .partner-item .cnt .browser-pic .chrome, .partner-item .ui-list-item .icon-list, .icon-partner-bank, .icon-partner-security, .auth .icon-zfywxk, .auth .icon-zfywxk:hover, .auth .icon-pcirk, .auth .icon-pcirk:hover, .auth .icon-visayz, .auth .icon-visayz:hover, .auth .icon-vsjmfw, .auth .icon-vsjmfw:hover, .auth .icon-zjwm, .auth .icon-zjwm:hover, .auth .icon-wlgs, .auth .icon-wlgs:hover, .auth .icon-ppaa, .auth .icon-ppaa:hover, .auth .icon-hzdt, .auth .icon-hzdt:hover, .auth .icon-aqff, .auth .icon-aqff:hover, .auth .icon-rzcx, .auth .icon-rzcx:hover, .follow_btn, .follow_btn:hover, .partner-item .cnt .business-pic-last i, .partner-item .cnt .business-pic-last .a, .partner-item .cnt .business-pic-last .b, .partner-item .cnt .business-pic-last .c, .partner-item .cnt .business-pic-last .d, .partner-item .cnt .business-pic-last .e, .partner-item .cnt .business-pic-last .f, .partner-item .cnt .business-pic-last .g, .partner-item .cnt .business-pic-last .h, .partner-item .cnt .business-pic-last .i, .partner-item .cnt .business-pic-last .j,.nav-item-sub .sub-container .digital,.sub-item .sub-item-digital,.sub-item .sub-item-11x5,.sub-item .sub-item-kl8,.sub-item .sub-item-3d,.sub-item .sub-item-k3,.sub-item .sub-item-p3{background-image:url(../images/combo.png);}
+.header{
+  width:100%;
+  height:100px;
+  background-color:#ffffff;
+  border-bottom: 1px solid #bfbfbf;
+}
+.header-wrap{
+  height:83px;
+  padding-top:10px;
+  margin: 0 auto;
+  display:block;
+  float:none;
+}
+
+/* logo */
+#kirin-img-logo {
+  margin-right: 5px;
+}
+.ui-logo-kirin {
+  width: 275px;
+  height: 83px;
+  display: block;
+  text-indent: -9999px;
+  background-position: 0 0;
+}
+/* 导航条 nav */
+.nav{
+  /*width:660px;*/
+  height:45px;
+  float:right;
+  /*position:relative;*/
+  z-index:999;
+}
+.nav-item {
+  float: left;
+  height: 45px;
+  /* position: relative; */
+}
+.nav-item .nav-item-link{
+  height:45px;
+  display:block;
+  text-indent:-9999em;
+  overflow:hidden;
+  background-repeat:no-repeat;
+  font-size:16px;
+  line-height: 54px;
+}
+.nav-item .nav-item-link:hover{
+  background-repeat:no-repeat;
+}
+.nav-item .nav-item-link-active{
+  background-repeat:no-repeat;
+}
+
+.nav-item-sub{
+  position:absolute;
+  /*padding:9px 3px;*/
+  top:100px;
+  background-color:#fff;
+  left:0;
+  width:100%;
+  z-index:999;
+  border-top:solid 1px #e3e3e3;
+  border-bottom:solid 1px #e3e3e3;
+}
+.nav-item-sub .sub-container{
+  margin:0 auto;
+  float:none;
+  padding:10px 0;
+  display:block;
+}
+.nav-item-sub .sub-container .sub-item{
+  width:175px;
+  height:120px;
+  margin-right:10px;
+  float:left; 
+  border-right: 1px solid #e7e7e7;
+  position: relative;
+  padding-right: 14px;
+}
+.nav-item-sub .sub-container .digital{
+  background-position:-167px -280px;
+}
+.nav-item-sub .sub-container .sub-item .title{
+  padding: 0 12px 2px 15px;
+  white-space: nowrap;
+  font-weight: 700;
+  border-collapse: separate;
+}
+.nav-item-sub .sub-container .sub-item-last{
+  margin-right:0;
+  padding-right:0;
+  border-right: 0;
+  width:189px;
+}
+
+.sub-item .icon-sub-item{position:absolute;top:3px;left:0;width:92px;height:92px;display:block;}
+.sub-item .sub-item-digital{background-position:-670px 14px;}
+.sub-item .sub-item-11x5{background-position:-782px 10px;}
+.sub-item .sub-item-kl8{background-position:-890px 14px;}
+.sub-item .sub-item-3d{background-position:-1000px 4px;}
+.sub-item .sub-item-k3{background-position:-1115px 4px;}
+.sub-item .sub-item-p3{background-position:-1230px 10px;}
+.sub-item .ui-link{/*height:16px;*/padding:0px 0;position:relative;padding-left:106px;/*width:80px;*/}
+.nav-item-sub .sub-container .sub-item-last .ui-link{right:0;}
+
+
+.nav-item-table{
+  white-space:nowrap;
+  background-repeat:repeat;
+  background-attachment:scroll;
+  background-position:0 0;
+}
+.nav-item-table td{
+  border-right:1px solid #e7e7e7;
+  padding:2px 14px;
+  white-space:nowrap;
+}
+.nav-item-table th{
+  border-right:1px solid #e7e7e7;
+  padding:0 12px 2px 15px;
+  white-space:nowrap;
+  font-weight:700;
+  border-collapse:separate;
+}
+.nav-item-table th.last{
+  border-right:none;
+}
+.nav-item-table td.last{
+  border-right:none;
+}
+.nav-item-sub a{
+  color:#898989;
+  display:inline-block;
+  padding:0 3px;
+  position:relative;
+  vertical-align:middle;
+}
+.nav-item-sub a:hover{
+  background-color:#aaaaaa;
+  border-radius:2px 2px 2px 2px;
+  color:#FFFFFF!important;
+  text-decoration:none;
+  vertical-align:middle;
+}
+.nav-item .nav-item-sub{
+  display:none;
+}
+
+#home .nav-item-link{
+  width:32px;
+  margin-right:42px;
+  background-position:-15px -100px;
+}
+#home .nav-item-link:hover{
+  background-position:-15px -145px;
+}
+
+#lotto .nav-item-link{
+  width:32px;
+  margin-right:42px;
+  background-position:-15px -190px;
+}
+#lotto .nav-item-link:hover{
+  background-position:-15px -235px;
+}
+#lotto .nav-item-link-active{
+  background-position:-15px -235px;
+}
+#lotto .nav-item-sub{
+  /*right:20px;*/
+}
+
+#casino .nav-item-link{
+  width:48px;
+  margin-right:32px;
+  background-position:-15px -280px;
+}
+#casino .nav-item-link:hover{
+  background-position:-15px -325px;
+}
+#casino .nav-item-link-active{
+  background-position:-15px -325px;
+}
+#casino .nav-item-sub{
+  /*right:20px;*/
+}
+
+#sports .nav-item-link{
+  width:32px;
+  margin-right:42px;
+  background-position:-15px -370px;
+}
+#sports .nav-item-link:hover{
+  background-position:-15px -415px;
+}
+#sports .nav-item-link-active{
+  background-position:-15px -415px;
+}
+#sports .nav-item-sub{
+  right:20px;
+}
+
+#game .nav-item-link{
+  width:64px;
+  margin-right:42px;
+  background-position:-15px -460px;
+}
+#game .nav-item-link:hover{
+  background-position:-15px -505px;
+}
+#game .nav-item-link-active{
+  background-position:-15px -505px;
+}
+#game .nav-item-sub{
+  right:20px;
+}
+
+#promo .nav-item-link{
+  width:32px;
+  margin-right:42px;
+  background-position:-15px -550px;
+}
+#promo .nav-item-link:hover{
+  background-position:-15px -595px;
+}
+#promo .nav-item-link-active{
+  background-position:-15px -595px;
+}
+#promo .nav-item-sub{
+  right:20px;
+}
+
+
+#help .icon-nav-split{
+  width:3px;
+  height:45px;
+  display:inline-block;
+  margin-right:25px;
+  float:left;
+  background-position:-366px -45px;
+}
+#help .nav-item-link{
+  width:32px;
+  float:left;
+  background-position:-15px -640px;
+}
+#help .nav-item-link:hover{
+  background-position:-15px -685px;
+}
+#help .nav-item-link-active{
+  background-position:-15px -685px;
+}
+#help .angle{
+  right:28px;
+}
+#help .nav-item-sub{
+  right:0px;
+}

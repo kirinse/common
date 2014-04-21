@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>Common Mocha Runner</title>
+    <link href="../static/css/mocha.css" type="text/css" rel="stylesheet" charset="utf-8">
+  </head>
+  <body>
+<style>
+/* alipay iconfont */
+@font-face {
+  font-family: "rei";
+  src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20130423"); /* IE9 */
+  src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20130423#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("https://i.alipayobjects.com/common/fonts/rei.woff?20130423") format("woff"), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
+  url("https://i.alipayobjects.com/common/fonts/rei.ttf?20130423")  format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("https://i.alipayobjects.com/common/fonts/rei.svg?20130423#rei") format("svg"); /* iOS 4.1- */
+}
+.iconfont {
+  font-family:"rei";
+  font-style: normal;
+  font-weight: normal;
+  cursor: default;
+  -webkit-font-smoothing: antialiased;
+}
+</style>
+
+<script src="http://assets.spmjs.org/??
+seajs/seajs/2.2.0/sea.js,
+seajs/seajs-combo/1.0.1/seajs-combo.js,
+seajs/seajs-style/1.0.2/seajs-style.js,
+seajs/seajs-health/0.1.0/seajs-health.js,
+jquery/jquery/1.7.2/jquery.js"></script>
+<script>
+  (function() {
+
+  var query = location.search.substring(1).split('&');
+  var srcdir = 'src';
+
+  if (contain(query, 'dist')) {
+    srcdir = 'dist';
+    
+      seajs.use("../dist/account.js");
+      seajs.use("../dist/birthday.js");
+      seajs.use("../dist/common.js");
+      seajs.use("../dist/count.js");
+      seajs.use("../dist/dropdown.js");
+      seajs.use("../dist/message.js");
+      seajs.use("../dist/robot.js");
+  } else if (contain(query, 'cov')) {
+    srcdir = 'src-cov';
+  }
+
+  seajs.config({
+    alias: {
+      "$": 'jquery/jquery/1.7.2/jquery',
+      "$-debug": 'jquery/jquery/1.7.2/jquery-debug',
+      "jquery": 'jquery/jquery/1.7.2/jquery',
+      "jquery-debug": 'jquery/jquery/1.7.2/jquery-debug',
+      expect: "gallery/expect/0.2.0/expect",
+      puerh: "popomore/puerh/0.1.0/puerh",
+      handlebars: "gallery/handlebars/1.0.2/handlebars",
+      sinon: "gallery/sinon/1.6.0/sinon"
+    },
+    map: [function(uri) {
+      // resolve id
+      var m = uri.match(/kirin\/common\/1.0.0\/(.*)/);
+      if (m) {
+        return resolve(m[1]);
+      }
+      return uri;
+    }, function(uri) {
+      var m = uri.match(/([A-Za-z\-]+)\/[A-Za-z\-]+\/[\.0-9]+\/.+/);
+      if (m && /^alipay$/.test(m[1])) {
+        return 'http://yuan.alipay.im/assets/' + m[0];
+      }
+      return uri;
+    }],
+    comboExcludes: {test: function(uri) {
+      return uri.indexOf('http://assets.spmjs.org') === -1;
+    }}
+  });
+
+  function resolve(file) {
+    if (contain(query, 'debug')) {
+      if (file.indexOf('-debug') === -1) {
+        file = file.replace(/\.(\w+)$/, '-debug.$1');
+      }
+    }
+    return seajs.resolve("../" + srcdir + "/" + file + '#');
+  }
+
+  function contain(arr, value) {
+    for (var i in arr) {
+      if (arr[i] === value) {
+        return true;
+      }
+    }
+    return false;
+  }
+      seajs.config({ alias: {"popup":"arale/popup/1.1.6/popup","overlay":"arale/overlay/1.1.4/overlay","mask":"arale/overlay/1.1.4/mask","position":"arale/position/1.0.1/position","iframe-shim":"arale/iframe-shim/1.0.2/iframe-shim","widget":"arale/widget/1.1.1/widget","base":"arale/base/1.1.1/base","templatable":"arale/templatable/0.9.2/templatable","handlebars":"gallery/handlebars/1.0.2/handlebars","xbox":"alipay/xbox/1.0.3/xbox","swfobject":"gallery/swfobject/2.2.0/swfobject","cookie":"arale/cookie/1.0.2/cookie","alice-base":"alice/base/1.0.2/base.css","grid":"alice/grid/1.0.0/grid.css"}});
+    seajs.use(["alice/base/1.0.2/base.css","alice/grid/1.0.0/grid.css"]);
+      seajs.config({ alias: {}});
+
+    seajs.config({alias: {
+      "$-debug": 'jquery/jquery/1.7.2/jquery-debug'
+        ,"account": resolve("account.js")
+        ,"alice.common.v1-1.4.css": resolve("alice.common.v1-1.4.css")
+        ,"birthday": resolve("birthday.js")
+        ,"common.css": resolve("common.css")
+        ,"common": resolve("common.js")
+        ,"count": resolve("count.js")
+        ,"dropdown": resolve("dropdown.js")
+        ,"header.css": resolve("header.css")
+        ,"message": resolve("message.js")
+        ,"out.pa_new-1.0.css": resolve("out.pa_new-1.0.css")
+        ,"robot": resolve("robot.js")
+    }});
+
+    // 加载依赖的 css 文件
+    var cssArray = [];
+    cssArray.push('arale/popup/1.1.6/popup');
+    cssArray.push('arale/overlay/1.1.4/overlay');
+    cssArray.push('arale/overlay/1.1.4/mask');
+    cssArray.push('arale/position/1.0.1/position');
+    cssArray.push('arale/iframe-shim/1.0.2/iframe-shim');
+    cssArray.push('arale/widget/1.1.1/widget');
+    cssArray.push('arale/base/1.1.1/base');
+    cssArray.push('arale/templatable/0.9.2/templatable');
+    cssArray.push('gallery/handlebars/1.0.2/handlebars');
+    cssArray.push('alipay/xbox/1.0.3/xbox');
+    cssArray.push('gallery/swfobject/2.2.0/swfobject');
+    cssArray.push('arale/cookie/1.0.2/cookie');
+    cssArray.push('alice/base/1.0.2/base.css');
+    cssArray.push('alice/grid/1.0.0/grid.css');
+    for (var i=0; i<cssArray.length; i++) {
+      if (cssArray[i].indexOf('.css') < 0) {
+        cssArray.splice(i, 1);
+      }
+    }
+    seajs.use(cssArray);
+  })();
+</script>
+    <script src="http://assets.spmjs.org/gallery/mocha/1.9.0/mocha.js"></script>
+    <script src="http://assets.spmjs.org/gallery/sinon/1.6.0/sinon.js"></script>
+    <!--[if lte IE 8]>
+    <script src="http://assets.spmjs.org/gallery/sinon/1.6.0/sinon-ie.js"></script>
+    <![endif]--> 
+    <div id="mocha"></div>
+    <script>
+      (function() {
+        mocha.setup('bdd');
+        var tests = ["topmenu-spec.js"];
+
+        var specs = [];
+        for (var i = 0; i < tests.length; i++) {
+          specs[i] = './' + tests[i];
+        }
+
+        seajs.use(specs, function() {
+          if (window.mochaPhantomJS) {
+            mochaPhantomJS.run()
+          } else {
+            mocha.run()
+          }
+        })
+      })();
+    </script>
+  </body>
+</html>

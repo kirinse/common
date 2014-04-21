@@ -1,0 +1,53 @@
+{
+  "family": "kirin",
+  "name": "common",
+  "version": "1.0.0",
+  "description": "kirin common(header).",
+  "homepage": "https://github.com/darkmoon/topmenu",
+  "author": "Paul",
+  "maintainers": [
+    "Paul"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/darkmoon/topmenu.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": [],
+  "licenses": "MIT",
+  "spm": {
+    "output": [
+      "common.css"
+      ,"header.css"
+      ,"common.js"
+      ,"count.js"
+      ,"message.js"
+      ,"account.js"
+      ,"birthday.js"
+      ,"robot.js"
+      ,"dropdown.js"
+    ],
+    "alias": {
+      "popup": "arale/popup/1.1.6/popup"
+      ,"overlay": "arale/overlay/1.1.4/overlay"
+      ,"mask": "arale/overlay/1.1.4/mask"
+      ,"position": "arale/position/1.0.1/position"
+      ,"iframe-shim": "arale/iframe-shim/1.0.2/iframe-shim"
+      ,"widget": "arale/widget/1.1.1/widget"
+      ,"base": "arale/base/1.1.1/base"
+      ,"templatable": "arale/templatable/0.9.2/templatable"
+      ,"handlebars": "gallery/handlebars/1.0.2/handlebars"
+      ,"xbox": "alipay/xbox/1.0.3/xbox"
+      ,"swfobject":"gallery/swfobject/2.2.0/swfobject"
+      ,"cookie": "arale/cookie/1.0.2/cookie"
+      ,"alice-base": "alice/base/1.0.2/base.css"
+      ,"grid": "alice/grid/1.0.0/grid.css"
+
+      
+    },
+    "devAlias": {},
+    "engines": {}
+  }
+}
