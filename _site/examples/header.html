@@ -10,7 +10,9 @@
     <!--[if lt IE 9]>
     <script src="../static/js/html5shiv.js"></script>
     <![endif]-->
-    <script src="http://asset.kirin.com/js/??seajs/seajs/2.2.1/sea.js,seajs/seajs-combo/1.0.1/seajs-combo.js,seajs/seajs-style/1.0.2/seajs-style.js"></script>
+    <script src="http://asset.kirin.com/js/seajs/seajs/2.2.1/sea.js"></script>
+    <script src="http://asset.kirin.com/js/seajs/seajs-combo/1.0.1/seajs-combo.js"></script>
+    <script src="http://asset.kirin.com/js/seajs/seajs-style/1.0.2/seajs-style.js"></script>
     <script>
     var query = location.search.substring(1).split('&');
     var srcdir = 'src';
@@ -41,6 +43,7 @@
         ,"cookie": "arale/cookie/1.0.2/cookie"
         ,"alice-base": "alice/base/1.0.2/base.css"
         ,"grid": "alice/grid/1.0.0/grid.css"
+        ,"iconfont.css": resolve("iconfont.css")
         ,"common.css": resolve("common.css")
         ,"header.css": resolve("header.css")
         ,"common": resolve("common.js")
@@ -60,8 +63,8 @@
         return uri;
       }],
       comboExcludes: {test: function(uri) {
-        // return true;
-        return uri.indexOf('http://asset.kirin.com') === -1;
+        return true;
+        // return uri.indexOf('http://asset.kirin.com') === -1;
       }}
     });
     function resolve(file) {
@@ -80,7 +83,7 @@
       }
       return false;
     }
-    seajs.use(["alice-base", "grid", "common.css", "header.css"]);
+    seajs.use(["alice-base", "grid", "common.css", "header.css", "iconfont.css"]);
     </script>
   </head>
   <body role="document">
@@ -97,7 +100,8 @@
             <div id="global-header-user" class="global-dropdown">
               <div class="global-dropdown-hd">
                 <div class="global-dropdown-hd-normal">
-                  <a href="#" class="global-toplink-user global-toplink-link" seed="globalDropdownHdNormal-globalToplinkUser" smartracker="on">
+                  <a href="#" class="global-toplink-user global-toplink-link">
+                    <i class="iconfont user"></i>
                     <span id="global-toplink-username" class="global-toplink-username" title="{昵称}">{昵称}</span>
                   </a>
                 </div>
@@ -106,17 +110,17 @@
                 <div class="global-dropdown-bd-cnt global-dropdown-user">
                   <h3 class="global-tit" id="global-username" title="{用户名}">{用户名}</h3>
                   <div class="global-button-box">
-                    <a href="###" class="global-button global-button-sorange" seed="globalButtonBox-globalButton" smartracker="on">
-                      <span class="global-button-text" seed="global-button-deposit">充 值</span>
+                    <a href="###" class="global-button global-button-sorange">
+                      <span class="global-button-text">充 值</span>
                     </a>
-                    <a href="###" class="global-button global-button-swhite" seed="globalButtonBox-globalButtonT1" smartracker="on">
-                      <span class="global-button-text" seed="global-button-withdraw">提 现</span>
+                    <a href="###" class="global-button global-button-swhite">
+                      <span class="global-button-text">提 现</span>
                     </a>
-                    <a href="###" class="global-button global-button-swhite" seed="globalButtonBox-globalButtonT2" smartracker="on">
+                    <a href="###" class="global-button global-button-swhite">
                       <span class="global-button-text" seed="global-button-transfer">转 账</span>
                     </a>
                   </div>
-                  <div id="global-users" class="global-hide daparser-0" data-user="" data-daparser-cid="daparser-0">
+                  <div id="global-users" class="global-hide daparser-0" data-user="">
                     <h3 class="global-tit global-tit-line">切换用户</h3>
                     <ul id="global-list-user" class="global-list global-loading">
                       
@@ -133,34 +137,45 @@
             <div id="global-header-i" class="global-dropdown">
               <div class="global-dropdown-hd">
                 <div class="global-dropdown-hd-normal">
-                  <a href="/mykirin" class="global-toplink-i global-toplink-link">我的宝麟</a>
+                  <a href="/auth/mykirin.html" class="global-toplink-i global-toplink-link">我的宝麟</a>
                 </div>
               </div>
               <div class="global-dropdown-bd global-dropdown-bd-pl sl-alpha global-hide">
                 <div class="global-dropdown-bd-cnt global-dropdown-i">
                   <ul id="global-list-i" class="global-list">
-                    <li><a href="https://lab.alipay.com/user/assets/index.htm">账户管理</a></li>
-                    <li><a href="https://lab.alipay.com/consume/record/index.htm">交易记录</a></li>
-                    <li><a href="https://securitycenter.alipay.com/sc/index.htm">安全中心</a></li>
-                    <li><a href="https://huiyuan.alipay.com/benefits/index.htm">会员专享</a></li>
-                    <li><a href="https://app.alipay.com">应用中心</a></li>
+                    <li><a href="/auth/mykirin.html#/security">安全设置</a></li>
+                    <li><a href="/auth/mykirin.html#/cards">银行卡</a></li>
+                    <li><a href="/auth/mykirin.html#/team">我的团队</a></li>
+                    <li><a href="/auth/mykirin.html#/messages">消息中心</a></li>
+                    <li><a href="/auth/report.html">交易记录</a></li>
                   </ul>
                 </div>
               </div>
             </div>
             <!-- /global-dropdown-i -->
             <em class="global-separator">|</em>
-            <!-- global-dropdown-more -->
+            <!-- global-dropdown-balance -->
             <div id="global-header-more" class="global-dropdown">
               <div class="global-dropdown-hd">
                 <div class="global-dropdown-hd-normal">
-                  <a href="#" class="global-toplink-more global-toplink-link">更多</a>
+                  <a href="#" class="global-toplink-more global-toplink-link">
+                    <i class="iconfont balance"></i>
+                    钱包
+                  </a>
                 </div>
               </div>
               <div class="global-dropdown-bd global-dropdown-bd-pr sl-alpha global-hide">
                 <div class="global-dropdown-bd-cnt global-dropdown-more">
                   <ul id="global-list-more" class="global-list">
-                    <li><a href="http://mobile.alipay.com/" title="无线支付">无线支付</a></li>
+                    <li>
+                      <span class="app" title="大厅">
+                        大厅: 
+                      </span>
+                      <span class="amount">
+                        <i class="iconfont amount"></i>
+                        1234567.89
+                      </span>
+                    </li>
                     <li><a href="https://financeprod.alipay.com/account/finance/index.htm" title="理财专区">理财专区</a></li>
                     <li><a href="https://b.alipay.com/newIndex.htm?src=person_alipay_001" title="商家服务">商家服务</a></li>
                     <li><a href="http://club.alipay.com/" title="论坛">论坛</a></li>
@@ -169,7 +184,7 @@
                 </div>
               </div>
             </div>
-            <!-- /global-dropdown-more -->
+            <!-- /global-dropdown-balance -->
             <em class="global-separator">|</em>
             <a href="#弹出层" class="global-toplink-link global-toplink-link-last">提建议</a>
           </div>
@@ -284,7 +299,7 @@
                       trigger: moreTrigger[0],
                       element: moreEl.find('.global-dropdown-bd')[0],
                       align: {
-                        selfXY: ['100%-4px',0],
+                        selfXY: ['100%-4px',$.browser.msie ? 1 : 0],
                         baseXY: ['100%-2px',moreTrigger.height()-2]
                       },
                       afterShow: afterShow,
@@ -354,7 +369,6 @@
                 <div class="ui-grid-25 fn-clear sub-container">
                   <article class="sub-item" id="digital">
                     <i class="icon-sub-item sub-item-digital"></i>
-                    <!-- <h3 class="title icon-title-shishicai">时时彩</h3> -->
                     <ul class="ui-link">
                       <li class="sub-item-item" style="padding:2px 0;">
                         <a href="###">重庆时时彩</a>

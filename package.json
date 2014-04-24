@@ -21,6 +21,9 @@
     "output": [
       "common.css"
       ,"header.css"
+      ,"iconfont.css"
+      ,"images/*"
+      ,"fonts/*"
       ,"common.js"
       ,"count.js"
       ,"message.js"
