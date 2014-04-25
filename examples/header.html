@@ -158,7 +158,7 @@
             <div id="global-header-more" class="global-dropdown">
               <div class="global-dropdown-hd">
                 <div class="global-dropdown-hd-normal">
-                  <a href="#" class="global-toplink-more global-toplink-link">
+                  <a href="javascript:;" class="global-toplink-more global-toplink-link">
                     <i class="iconfont balance"></i>
                     钱包
                   </a>
@@ -168,18 +168,28 @@
                 <div class="global-dropdown-bd-cnt global-dropdown-more">
                   <ul id="global-list-more" class="global-list">
                     <li>
-                      <span class="app" title="大厅">
-                        大厅: 
-                      </span>
-                      <span class="amount">
-                        <i class="iconfont amount"></i>
-                        1234567.89
-                      </span>
+                      <div>
+                        <span class="app" title="大厅">
+                          大厅: 
+                        </span>
+                        <span class="amount">
+                          <i class="iconfont amount"></i>
+                          1234567.89
+                        </span>
+                      </div>
                     </li>
-                    <li><a href="https://financeprod.alipay.com/account/finance/index.htm" title="理财专区">理财专区</a></li>
-                    <li><a href="https://b.alipay.com/newIndex.htm?src=person_alipay_001" title="商家服务">商家服务</a></li>
-                    <li><a href="http://club.alipay.com/" title="论坛">论坛</a></li>
-                    <li><a href="/" title="返回宝麟首页">返回宝麟首页</a></li>
+                    <li>
+                      <div>
+                        <span class="app" title="彩票">
+                          彩票: 
+                        </span>
+                        <span class="amount">
+                          <i class="iconfont amount"></i>
+                          34567.89
+                        </span>
+                      </div>
+                    </li>
+                    <li><a href="javascript:;" title="刷新余额">刷新余额</a></li>
                   </ul>
                 </div>
               </div>
@@ -251,7 +261,7 @@
                     this.get('trigger').parent().removeClass('global-dropdown-active');
                   };
                   if (msgEl[0]) {
-                    // 是否发送消息，由cms(alipay/nav/msgSwitch.vm) 返回
+                    // 是否发送消息，由服务端返回
                     if (window.MSGSWITCH && msgEl.attr('data-msg') !== 'N') {
                       Message.getMessageCount(function(data) {
                         var message = new Message({
@@ -354,7 +364,7 @@
           <script>
             GLOBAL.BIRTHURL = 'https://i.alipayobjects.com/e/201205/2bYT4D3i49.swf';
             window.getUrl = function(){
-              window.open("http://fun.alipay.com/shengri/index.htm");
+              window.open("/auth/shengri.html");
             };
           </script>
         </div>
