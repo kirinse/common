@@ -1,8 +1,8 @@
-define("kirin/common/1.0.0/birthday-debug", [ "jquery-debug", "widget-debug", "base-debug", "swfobject-debug", "cookie-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
-    var Widget = require("widget-debug");
-    var swfobject = require("swfobject-debug");
-    var Cookie = require("cookie-debug");
+define("kirin/common/1.0.0/birthday-debug", [ "jquery/jquery/1.7.2/jquery-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug", "$-debug", "gallery/swfobject/2.2.0/swfobject-debug", "arale/cookie/1.0.2/cookie-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
+    var Widget = require("arale/widget/1.1.1/widget-debug");
+    var swfobject = require("gallery/swfobject/2.2.0/swfobject-debug");
+    var Cookie = require("arale/cookie/1.0.2/cookie-debug");
     var global = window.GLOBAL || {};
     var Birthday = Widget.extend({
         param: {

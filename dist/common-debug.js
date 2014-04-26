@@ -1,14 +1,17 @@
-define("kirin/common/1.0.0/common-debug", [ "popup-debug", "jquery-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug", "./count-debug", "./message-debug", "templatable-debug", "handlebars-debug", "./account-debug", "xbox-debug", "mask-debug", "./birthday-debug", "swfobject-debug", "cookie-debug", "./robot-debug" ], function(require, exports, module) {
+define("kirin/common/1.0.0/common-debug", [ "./count-debug", "jquery/jquery/1.7.2/jquery-debug", "./message-debug", "arale/templatable/0.9.2/templatable-debug", "$-debug", "gallery/handlebars/1.0.2/handlebars-debug", "./dropdown-debug", "arale/popup/1.1.6/popup-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug", "./account-debug", "alipay/xbox/1.0.3/xbox-debug", "arale/dialog/1.0.1/dialog-debug", "arale/overlay/1.0.1/overlay-debug", "arale/position/1.0.0/position-debug", "arale/iframe-shim/1.0.1/iframe-shim-debug", "arale/widget/1.0.3/widget-debug", "arale/base/1.0.1/base-debug", "arale/class/1.0.0/class-debug", "arale/events/1.0.0/events-debug", "arale/overlay/1.0.1/mask-debug", "arale/widget/1.0.3/templatable-debug", "gallery/handlebars/1.0.0/handlebars-debug", "alipay/object-shim/1.0.0/object-shim-debug", "./birthday-debug", "gallery/swfobject/2.2.0/swfobject-debug", "arale/cookie/1.0.2/cookie-debug", "./robot-debug", "./balance-debug" ], function(require, exports, module) {
     module.exports.Count = require("./count-debug");
     module.exports.Message = require("./message-debug");
     module.exports.Account = require("./account-debug");
     module.exports.Birthday = require("./birthday-debug");
     module.exports.Robot = require("./robot-debug");
     module.exports.Dropdown = require("./dropdown-debug");
+    module.exports.Balance = require("./balance-debug");
+    module.exports.Popup = require("arale/popup/1.1.6/popup-debug");
+    module.exports.Xbox = require("alipay/xbox/1.0.3/xbox-debug");
 });
 
-define("kirin/common/1.0.0/count-debug", [ "jquery-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
+define("kirin/common/1.0.0/count-debug", [ "jquery/jquery/1.7.2/jquery-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
     var srcNode, messageTrigger = $("#global-header-msg .global-toplink-msg");
     var Count = {
         count: 0,
@@ -42,19 +45,19 @@ define("kirin/common/1.0.0/count-debug", [ "jquery-debug" ], function(require, e
     }
 });
 
-define("kirin/common/1.0.0/message-debug", [ "jquery-debug", "templatable-debug", "handlebars-debug", "kirin/common/1.0.0/dropdown-debug", "popup-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug", "kirin/common/1.0.0/count-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
-    var Templatable = require("templatable-debug");
+define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug", "arale/templatable/0.9.2/templatable-debug", "$-debug", "gallery/handlebars/1.0.2/handlebars-debug", "kirin/common/1.0.0/dropdown-debug", "arale/popup/1.1.6/popup-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug", "kirin/common/1.0.0/count-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
+    var Templatable = require("arale/templatable/0.9.2/templatable-debug");
     var Dropdown = require("kirin/common/1.0.0/dropdown-debug");
-    var Handlebars = require("handlebars-debug");
-    var Position = require("position-debug");
+    var Handlebars = require("gallery/handlebars/1.0.2/handlebars-debug");
+    var Position = require("arale/position/1.0.1/position-debug");
     var Count = require("kirin/common/1.0.0/count-debug");
     var global = window.GLOBAL || {}, messageReady = false;
     var URLCONFIG = {
-        redirecturl: global.system.personal + "/user/msgcenter/modifyStatusAndRedirect.htm",
-        getmessage: global.system.personal + "/user/msgcenter/getMsgInfosNew.json?_callback=?",
-        popmessage: global.system.personal + "/user/msgcenter/popMsgInfos.json?_callback=?",
-        readmessage: global.system.personal + "/user/msgcenter/readMsg.json?_callback=?&historySource=I&msgIds="
+        redirecturl: global.system.personal + "/ajax/messages/modifyStatusAndRedirect.html",
+        getmessage: global.system.personal + "/ajax/messages/getMsgInfosNew.json?_callback=?",
+        popmessage: global.system.personal + "/ajax/messages/popMsgInfos.json?_callback=?",
+        readmessage: global.system.personal + "/ajax/messages/readMsg.json?_callback=?&historySource=I&msgIds="
     };
     var Message = Dropdown.extend({
         Implements: Templatable,
@@ -229,11 +232,35 @@ define("kirin/common/1.0.0/message-debug", [ "jquery-debug", "templatable-debug"
     }
 });
 
-define("kirin/common/1.0.0/account-debug", [ "jquery-debug", "kirin/common/1.0.0/dropdown-debug", "popup-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug", "handlebars-debug", "xbox-debug", "mask-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
+define("kirin/common/1.0.0/dropdown-debug", [ "arale/popup/1.1.6/popup-debug", "$-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug" ], function(require, exports, module) {
+    var Popup = require("arale/popup/1.1.6/popup-debug");
+    var Dropdown = Popup.extend({
+        setup: function() {
+            Dropdown.superclass.setup.call(this);
+            this._tweakAlignDefaultValue();
+        },
+        // 调整 align 属性的默认值
+        _tweakAlignDefaultValue: function() {
+            var align = this.get("align");
+            // 默认坐标在目标元素左下角
+            if (align.baseXY.toString() === [ 0, 0 ].toString()) {
+                align.baseXY = [ 0, "100%" ];
+            }
+            // 默认基准定位元素为 trigger
+            if (align.baseElement._id === "VIEWPORT") {
+                align.baseElement = this.get("trigger");
+            }
+            this.set("align", align);
+        }
+    });
+    module.exports = Dropdown;
+});
+
+define("kirin/common/1.0.0/account-debug", [ "jquery/jquery/1.7.2/jquery-debug", "kirin/common/1.0.0/dropdown-debug", "arale/popup/1.1.6/popup-debug", "$-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug", "gallery/handlebars/1.0.2/handlebars-debug", "alipay/xbox/1.0.3/xbox-debug", "arale/dialog/1.0.1/dialog-debug", "arale/overlay/1.0.1/overlay-debug", "arale/position/1.0.0/position-debug", "arale/iframe-shim/1.0.1/iframe-shim-debug", "arale/widget/1.0.3/widget-debug", "arale/base/1.0.1/base-debug", "arale/class/1.0.0/class-debug", "arale/events/1.0.0/events-debug", "arale/overlay/1.0.1/mask-debug", "arale/widget/1.0.3/templatable-debug", "gallery/handlebars/1.0.0/handlebars-debug", "alipay/object-shim/1.0.0/object-shim-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
     var Dropdown = require("kirin/common/1.0.0/dropdown-debug");
-    var Handlebars = require("handlebars-debug");
-    var Xbox = require("xbox-debug");
+    var Handlebars = require("gallery/handlebars/1.0.2/handlebars-debug");
+    var Xbox = require("alipay/xbox/1.0.3/xbox-debug");
     var accountReady = false;
     var global = window.GLOBAL || {};
     var URLCONFIG = {
@@ -343,11 +370,11 @@ define("kirin/common/1.0.0/account-debug", [ "jquery-debug", "kirin/common/1.0.0
     }
 });
 
-define("kirin/common/1.0.0/birthday-debug", [ "jquery-debug", "widget-debug", "base-debug", "swfobject-debug", "cookie-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
-    var Widget = require("widget-debug");
-    var swfobject = require("swfobject-debug");
-    var Cookie = require("cookie-debug");
+define("kirin/common/1.0.0/birthday-debug", [ "jquery/jquery/1.7.2/jquery-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug", "$-debug", "gallery/swfobject/2.2.0/swfobject-debug", "arale/cookie/1.0.2/cookie-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
+    var Widget = require("arale/widget/1.1.1/widget-debug");
+    var swfobject = require("gallery/swfobject/2.2.0/swfobject-debug");
+    var Cookie = require("arale/cookie/1.0.2/cookie-debug");
     var global = window.GLOBAL || {};
     var Birthday = Widget.extend({
         param: {
@@ -440,11 +467,11 @@ define("kirin/common/1.0.0/birthday-debug", [ "jquery-debug", "widget-debug", "b
     }
 });
 
-define("kirin/common/1.0.0/robot-debug", [ "jquery-debug", "templatable-debug", "handlebars-debug", "kirin/common/1.0.0/dropdown-debug", "popup-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
-    var Templatable = require("templatable-debug");
+define("kirin/common/1.0.0/robot-debug", [ "jquery/jquery/1.7.2/jquery-debug", "arale/templatable/0.9.2/templatable-debug", "$-debug", "gallery/handlebars/1.0.2/handlebars-debug", "kirin/common/1.0.0/dropdown-debug", "arale/popup/1.1.6/popup-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
+    var Templatable = require("arale/templatable/0.9.2/templatable-debug");
     var Dropdown = require("kirin/common/1.0.0/dropdown-debug");
-    var Handlebars = require("handlebars-debug");
+    var Handlebars = require("gallery/handlebars/1.0.2/handlebars-debug");
     var robotReady = false;
     var global = window.GLOBAL || {};
     var URLCONFIG = {
@@ -616,5 +643,75 @@ define("kirin/common/1.0.0/robot-debug", [ "jquery-debug", "templatable-debug", 
             percent += 20;
         }
         return percent;
+    }
+});
+
+define("kirin/common/1.0.0/balance-debug", [ "jquery/jquery/1.7.2/jquery-debug", "kirin/common/1.0.0/dropdown-debug", "arale/popup/1.1.6/popup-debug", "$-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug", "gallery/handlebars/1.0.2/handlebars-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
+    var Dropdown = require("kirin/common/1.0.0/dropdown-debug");
+    var Handlebars = require("gallery/handlebars/1.0.2/handlebars-debug");
+    var balanceReady = false;
+    var global = window.GLOBAL || {};
+    var URLCONFIG = {
+        balanceurl: global.system.personal + "/ajax/balance/getBalance.json?_callback=?"
+    };
+    var Balance = Dropdown.extend({
+        events: {
+            "click #global-refresh-balance": "refresh"
+        },
+        setup: function() {
+            Balance.superclass.setup.call(this);
+        },
+        show: function() {
+            var balanceList = this.$("#global-list-more");
+            // 浮层显示的时候才去请求关联账号，只请求一次
+            if (!balanceReady) {
+                balanceReady = true;
+                $.ajax(URLCONFIG.balanceurl, {
+                    dataType: "jsonp"
+                }).success(function(data) {
+                    if (data.stat != "ok") {
+                        balanceReady = false;
+                        balanceList.hide();
+                        return;
+                    }
+                    balanceReady = true;
+                    renderBalance(data, balanceList);
+                }).error(function() {
+                    balanceReady = false;
+                    balanceList.hide();
+                });
+            }
+            return Balance.superclass.show.call(this);
+        },
+        refresh: function(e) {
+            e.preventDefault();
+            var balanceList = this.$("#global-list-more");
+            balanceList.addClass("global-loading");
+            $.ajax(URLCONFIG.balanceurl, {
+                dataType: "jsonp"
+            }).success(function(data) {
+                if (data.stat != "ok") {
+                    balanceReady = false;
+                    balanceList.hide();
+                    return;
+                }
+                balanceReady = true;
+                renderBalance(data, balanceList);
+            }).error(function() {
+                balanceReady = false;
+                balanceList.hide();
+            });
+        }
+    });
+    module.exports = Balance;
+    // Helper
+    // ------
+    function renderBalance(model, parentNode) {
+        var i = 0, infoModel = {
+            infos: model.infos
+        };
+        var template = Handlebars.compile('{{#infos}}<li><div>\n                        <span class="app" title="{{{app}}}">\n                          {{{app}}}: \n                        </span>\n                        <span class="amount">\n                          <i class="iconfont amount"></i>\n                          {{{balance}}}\n                        </span>\n                      </div></li>{{/infos}}');
+        parentNode.html(template(infoModel)).removeClass("global-loading");
     }
 });

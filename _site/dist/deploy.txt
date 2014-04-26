@@ -1,0 +1,1 @@
+{"user":"darkmoon","time":"2014-04-25T14:09:33.952Z","platform":"darwin","node":"v0.10.26","spm":"2.2.5","deploy":"0.2.4"}

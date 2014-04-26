@@ -1,5 +1,5 @@
-define(["jquery", "./dropdown", "popup", "overlay", "position", "iframe-shim", "widget", "base", "handlebars", "xbox", "mask"], function(require, exports, module) {
-  var $ = require("jquery");
+define(function(require, exports, module) {
+  var $ = require("$");
   var Dropdown = require("./dropdown");
   var Handlebars = require("handlebars");
   var Xbox = require("xbox");
