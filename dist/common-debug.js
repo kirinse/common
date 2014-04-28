@@ -687,7 +687,7 @@ define("kirin/common/1.0.0/balance-debug", [ "jquery/jquery/1.7.2/jquery-debug",
         refresh: function(e) {
             e.preventDefault();
             var balanceList = this.$("#global-list-more");
-            balanceList.addClass("global-loading");
+            balanceList.html("").addClass("global-loading");
             $.ajax(URLCONFIG.balanceurl, {
                 dataType: "jsonp"
             }).success(function(data) {

@@ -39,7 +39,7 @@ define(function(require, exports, module) {
     refresh: function(e) {
       e.preventDefault();
       var balanceList = this.$('#global-list-more');
-      balanceList.addClass('global-loading');
+      balanceList.html('').addClass('global-loading');
       $.ajax(URLCONFIG.balanceurl, {
         dataType: 'jsonp'
       }).success(function(data) {
