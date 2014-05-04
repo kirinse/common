@@ -1,16 +1,16 @@
-define("kirin/common/1.0.0/message-debug", [ "jquery-debug", "templatable-debug", "handlebars-debug", "./dropdown-debug", "popup-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug", "./count-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
-    var Templatable = require("templatable-debug");
+define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug", "arale/templatable/0.9.2/templatable-debug", "$-debug", "gallery/handlebars/1.0.2/handlebars-debug", "./dropdown-debug", "arale/popup/1.1.6/popup-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug", "./count-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
+    var Templatable = require("arale/templatable/0.9.2/templatable-debug");
     var Dropdown = require("./dropdown-debug");
-    var Handlebars = require("handlebars-debug");
-    var Position = require("position-debug");
+    var Handlebars = require("gallery/handlebars/1.0.2/handlebars-debug");
+    var Position = require("arale/position/1.0.1/position-debug");
     var Count = require("./count-debug");
     var global = window.GLOBAL || {}, messageReady = false;
     var URLCONFIG = {
-        redirecturl: global.system.personal + "/user/msgcenter/modifyStatusAndRedirect.htm",
-        getmessage: global.system.personal + "/user/msgcenter/getMsgInfosNew.json?_callback=?",
-        popmessage: global.system.personal + "/user/msgcenter/popMsgInfos.json?_callback=?",
-        readmessage: global.system.personal + "/user/msgcenter/readMsg.json?_callback=?&historySource=I&msgIds="
+        redirecturl: global.system.personal + "/ajax/messages/modifyStatusAndRedirect.html",
+        getmessage: global.system.personal + "/ajax/messages/getMsgInfosNew.json?_callback=?",
+        popmessage: global.system.personal + "/ajax/messages/popMsgInfos.json?_callback=?",
+        readmessage: global.system.personal + "/ajax/messages/readMsg.json?_callback=?&historySource=I&msgIds="
     };
     var Message = Dropdown.extend({
         Implements: Templatable,
@@ -37,7 +37,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery-debug", "templatable-debug"
             var that = this;
             if (!messageReady) {
                 $.ajax(URLCONFIG.popmessage, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat !== "ok") {
                         return;
@@ -74,7 +74,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery-debug", "templatable-debug"
             this.hide();
             this.$("#global-list-msg").html();
             $.ajax(URLCONFIG.readmessage + msgIds, {
-                dataType: "jsonp"
+                dataType: "json"
             });
         },
         // 标记单条消息为已读
@@ -98,7 +98,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery-debug", "templatable-debug"
                 msgConfirm.hide();
                 setMsgRead.call(this, ele);
                 $.ajax(URLCONFIG.readmessage + msgId, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 });
             }
         },
@@ -109,7 +109,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery-debug", "templatable-debug"
             this.$("#global-msg-confirm").hide();
             setMsgRead.call(this, this.currentConfirmMsg);
             $.ajax(URLCONFIG.readmessage + msgId, {
-                dataType: "jsonp"
+                dataType: "json"
             });
         },
         // 二次确认浮层，取消按钮
@@ -126,7 +126,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery-debug", "templatable-debug"
     // 获取消息数
     function getMessageCount(callback) {
         $.ajax(URLCONFIG.getmessage, {
-            dataType: "jsonp"
+            dataType: "json"
         }).success(function(data) {
             if (data.stat === "ok") {
                 var totalCount = parseInt(data.totalCount, 10);
@@ -185,8 +185,8 @@ define("kirin/common/1.0.0/message-debug", [ "jquery-debug", "templatable-debug"
     }
 });
 
-define("kirin/common/1.0.0/dropdown-debug", [ "popup-debug", "jquery-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug" ], function(require, exports, module) {
-    var Popup = require("popup-debug");
+define("kirin/common/1.0.0/dropdown-debug", [ "arale/popup/1.1.6/popup-debug", "$-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug" ], function(require, exports, module) {
+    var Popup = require("arale/popup/1.1.6/popup-debug");
     var Dropdown = Popup.extend({
         setup: function() {
             Dropdown.superclass.setup.call(this);
@@ -209,8 +209,8 @@ define("kirin/common/1.0.0/dropdown-debug", [ "popup-debug", "jquery-debug", "ov
     module.exports = Dropdown;
 });
 
-define("kirin/common/1.0.0/count-debug", [ "jquery-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
+define("kirin/common/1.0.0/count-debug", [ "jquery/jquery/1.7.2/jquery-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
     var srcNode, messageTrigger = $("#global-header-msg .global-toplink-msg");
     var Count = {
         count: 0,

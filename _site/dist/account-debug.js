@@ -1,8 +1,8 @@
-define("kirin/common/1.0.0/account-debug", [ "jquery-debug", "./dropdown-debug", "popup-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug", "handlebars-debug", "xbox-debug", "mask-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
+define("kirin/common/1.0.0/account-debug", [ "jquery/jquery/1.7.2/jquery-debug", "./dropdown-debug", "arale/popup/1.1.6/popup-debug", "$-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug", "gallery/handlebars/1.0.2/handlebars-debug", "alipay/xbox/1.0.3/xbox-debug", "arale/dialog/1.0.1/dialog-debug", "arale/overlay/1.0.1/overlay-debug", "arale/position/1.0.0/position-debug", "arale/iframe-shim/1.0.1/iframe-shim-debug", "arale/widget/1.0.3/widget-debug", "arale/base/1.0.1/base-debug", "arale/class/1.0.0/class-debug", "arale/events/1.0.0/events-debug", "arale/overlay/1.0.1/mask-debug", "arale/widget/1.0.3/templatable-debug", "gallery/handlebars/1.0.0/handlebars-debug", "alipay/object-shim/1.0.0/object-shim-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
     var Dropdown = require("./dropdown-debug");
-    var Handlebars = require("handlebars-debug");
-    var Xbox = require("xbox-debug");
+    var Handlebars = require("gallery/handlebars/1.0.2/handlebars-debug");
+    var Xbox = require("alipay/xbox/1.0.3/xbox-debug");
     var accountReady = false;
     var global = window.GLOBAL || {};
     var URLCONFIG = {
@@ -26,7 +26,7 @@ define("kirin/common/1.0.0/account-debug", [ "jquery-debug", "./dropdown-debug",
             if (accountList.attr("data-user") === "true" && !accountReady) {
                 accountReady = true;
                 $.ajax(URLCONFIG.accounturl, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat != "ok") {
                         accountReady = false;
@@ -112,8 +112,8 @@ define("kirin/common/1.0.0/account-debug", [ "jquery-debug", "./dropdown-debug",
     }
 });
 
-define("kirin/common/1.0.0/dropdown-debug", [ "popup-debug", "jquery-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug" ], function(require, exports, module) {
-    var Popup = require("popup-debug");
+define("kirin/common/1.0.0/dropdown-debug", [ "arale/popup/1.1.6/popup-debug", "$-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug" ], function(require, exports, module) {
+    var Popup = require("arale/popup/1.1.6/popup-debug");
     var Dropdown = Popup.extend({
         setup: function() {
             Dropdown.superclass.setup.call(this);

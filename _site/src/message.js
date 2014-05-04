@@ -1,5 +1,5 @@
-define(["jquery", "templatable", "handlebars", "./dropdown", "popup", "overlay", "position", "iframe-shim", "widget", "base", "./count"], function(require, exports, module) {
-  var $ = require("jquery");
+define(function(require, exports, module) {
+  var $ = require("$");
   var Templatable = require("templatable");
   var Dropdown = require("./dropdown");
   var Handlebars = require("handlebars");
@@ -7,10 +7,10 @@ define(["jquery", "templatable", "handlebars", "./dropdown", "popup", "overlay",
   var Count = require("./count");
   var global = window.GLOBAL || {}, messageReady = false;
   var URLCONFIG = {
-    redirecturl: global.system.personal + '/user/msgcenter/modifyStatusAndRedirect.htm',
-    getmessage: global.system.personal + '/user/msgcenter/getMsgInfosNew.json?_callback=?',
-    popmessage: global.system.personal + '/user/msgcenter/popMsgInfos.json?_callback=?',
-    readmessage: global.system.personal + '/user/msgcenter/readMsg.json?_callback=?&historySource=I&msgIds='
+    redirecturl: global.system.personal + '/ajax/messages/modifyStatusAndRedirect.html',
+    getmessage: global.system.personal + '/ajax/messages/getMsgInfosNew.json?_callback=?',
+    popmessage: global.system.personal + '/ajax/messages/popMsgInfos.json?_callback=?',
+    readmessage: global.system.personal + '/ajax/messages/readMsg.json?_callback=?&historySource=I&msgIds='
   };
   var Message = Dropdown.extend({
     Implements: Templatable,
@@ -37,7 +37,7 @@ define(["jquery", "templatable", "handlebars", "./dropdown", "popup", "overlay",
       var that = this;
       if (!messageReady) {
         $.ajax(URLCONFIG.popmessage, {
-          dataType: 'jsonp'
+          dataType: 'json'
         }).success(function(data) {
           if (data.stat !== 'ok') {
             return;
@@ -73,7 +73,7 @@ define(["jquery", "templatable", "handlebars", "./dropdown", "popup", "overlay",
       }).get().join(',');
       this.hide();
       this.$('#global-list-msg').html();
-      $.ajax(URLCONFIG.readmessage + msgIds, {dataType: 'jsonp'});
+      $.ajax(URLCONFIG.readmessage + msgIds, {dataType: 'json'});
     },
     // 标记单条消息为已读
     markRead: function(e) {
@@ -95,7 +95,7 @@ define(["jquery", "templatable", "handlebars", "./dropdown", "popup", "overlay",
       } else {
         msgConfirm.hide();
         setMsgRead.call(this, ele);
-        $.ajax(URLCONFIG.readmessage + msgId, {dataType: 'jsonp'});
+        $.ajax(URLCONFIG.readmessage + msgId, {dataType: 'json'});
       }
     },
     // 二次确认浮层，确定按钮
@@ -104,7 +104,7 @@ define(["jquery", "templatable", "handlebars", "./dropdown", "popup", "overlay",
       var msgId = $(this.currentConfirmMsg).parent().attr('data-id');
       this.$('#global-msg-confirm').hide();
       setMsgRead.call(this, this.currentConfirmMsg);
-      $.ajax(URLCONFIG.readmessage + msgId, {dataType: 'jsonp'});
+      $.ajax(URLCONFIG.readmessage + msgId, {dataType: 'json'});
     },
     // 二次确认浮层，取消按钮
     confirmCancel: function(e) {
@@ -120,7 +120,7 @@ define(["jquery", "templatable", "handlebars", "./dropdown", "popup", "overlay",
   // 获取消息数
   function getMessageCount(callback) {
     $.ajax(URLCONFIG.getmessage, {
-      dataType: 'jsonp'
+      dataType: 'json'
     }).success(function(data) {
       if (data.stat === 'ok') {
         var totalCount = parseInt(data.totalCount, 10);

@@ -1,5 +1,5 @@
-define(["jquery"], function(require, exports, module) {
-  var $ = require("jquery");
+define(function(require, exports, module) {
+  var $ = require("$");
   var srcNode, messageTrigger = $('#global-header-msg .global-toplink-msg');
   var Count = {
     count: 0,

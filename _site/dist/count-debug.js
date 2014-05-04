@@ -1,5 +1,5 @@
-define("kirin/common/1.0.0/count-debug", [ "jquery-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
+define("kirin/common/1.0.0/count-debug", [ "jquery/jquery/1.7.2/jquery-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
     var srcNode, messageTrigger = $("#global-header-msg .global-toplink-msg");
     var Count = {
         count: 0,

@@ -72,7 +72,7 @@ ul.global-subnav span{padding:0 15px;height:28px;line-height:28px;*line-height:3
 .global-toplink a.global-toplink-msg{padding:1px 6px;-moz-border-radius:2px 2px;-webkit-border-radius:2px 2px;-o-border-radius:2px 2px;border-radius:2px 2px;background:#d9d9d9;color:#484848;line-height:16px;vertical-align:middle}
 @-moz-document url-prefix(){.global-toplink .global-toplink-i,.global-toplink .global-toplink-user,.global-toplink .global-toplink-more,.global-toplink .global-toplink-msg{height:16px}
 }
-.global-dropdown-active a.global-toplink-msg,#global-header-msg a.global-toplink-msg-active{background:#f3623a;color:#fff}
+.global-dropdown-active a.global-toplink-msg,#global-header-msg a.global-toplink-msg-active{background:#08c;color:#fff}
 .global-dropdown-active a.global-toplink-msg:hover,#global-header-msg a.global-toplink-msg-active:hover{color:#FFF}
 .global-toplink a.global-toplink-msg:hover{text-decoration:none}
 .global-toplink a.global-toplink-msg span{padding-left:4px}
@@ -173,7 +173,7 @@ div.global-button,p.global-button,span.global-button{*display:inline}
 .global-feedback a{cursor:pointer;display:block;overflow:hidden;position:relative;text-indent:-999em;width:30px;height:89px;background:url(./images/feedback.png) no-repeat scroll transparent;background-position:-30px 0;background-position:0 0\9;box-shadow:0 100px 100px rgba(255,255,255,0.3) inset;-webkit-transition:all .25s ease-in;-moz-transition:all .25s ease-in;transition:all .25s ease-in}
 .global-feedback a:hover{background-position:-30px 0\9;box-shadow:0 100px 100px rgba(255,255,255,0) inset;-webkit-transition:all .25s ease-in;-moz-transition:all .25s ease-in;transition:all .25s ease-in}
 .global-onlineservice{display:inline;position:absolute;right:0;top:88px;z-index:9999}
-.global-birth{float:right;position:relative;padding:8px 5px 0 0;z-index:100}
+.global-birth{right:0;position:absolute;padding:8px 5px 0 0;z-index:100}
 .global-birth-icon{position:relative;display:block;background:url(./images/repeat-x.png) -60px -1733px no-repeat;width:20px;height:16px;overflow:hidden;text-indent:-100px;z-index:10}
 .global-birth-tip{position:absolute;width:90px;height:24px;line-height:24px;text-align:center;top:2px;left:-103px}
 .global-birth-tip-content{position:relative;height:100%;width:100%;border:1px solid #dea90c;background:#ffff8d;z-index:2}
@@ -222,3 +222,4 @@ a.global-toplink-robot,a.global-toplink-robot:hover{color:#666;text-decoration:n
 .global-xbox-close:hover{color:#808080}
 .global-xbox-content{width:100%;height:100%}
 .global-xbox-mask{opacity:.6;filter:alpha(opacity=60);-moz-opacity:.6;background:black}
+#global-refresh-balance{display:block;text-align:right;padding:8px 8px 0 8px;}

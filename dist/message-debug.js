@@ -37,7 +37,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             var that = this;
             if (!messageReady) {
                 $.ajax(URLCONFIG.popmessage, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat !== "ok") {
                         return;
@@ -74,7 +74,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             this.hide();
             this.$("#global-list-msg").html();
             $.ajax(URLCONFIG.readmessage + msgIds, {
-                dataType: "jsonp"
+                dataType: "json"
             });
         },
         // 标记单条消息为已读
@@ -98,7 +98,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
                 msgConfirm.hide();
                 setMsgRead.call(this, ele);
                 $.ajax(URLCONFIG.readmessage + msgId, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 });
             }
         },
@@ -109,7 +109,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             this.$("#global-msg-confirm").hide();
             setMsgRead.call(this, this.currentConfirmMsg);
             $.ajax(URLCONFIG.readmessage + msgId, {
-                dataType: "jsonp"
+                dataType: "json"
             });
         },
         // 二次确认浮层，取消按钮
@@ -126,7 +126,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
     // 获取消息数
     function getMessageCount(callback) {
         $.ajax(URLCONFIG.getmessage, {
-            dataType: "jsonp"
+            dataType: "json"
         }).success(function(data) {
             if (data.stat === "ok") {
                 var totalCount = parseInt(data.totalCount, 10);

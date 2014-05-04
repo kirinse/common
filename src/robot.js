@@ -119,7 +119,7 @@ define(function(require, exports, module) {
       if (!robotReady) {
         robotReady = true;
         $.ajax(URLCONFIG.roboturl, {
-          dataType: 'jsonp'
+          dataType: 'json'
         }).success(function(data) {
           if (data.stat != 'ok') {
             Robot.superclass.show.call(that);

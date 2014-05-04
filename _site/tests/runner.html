@@ -42,10 +42,12 @@ jquery/jquery/1.7.2/jquery.js"></script>
     srcdir = 'dist';
     
       seajs.use("../dist/account.js");
+      seajs.use("../dist/balance.js");
       seajs.use("../dist/birthday.js");
       seajs.use("../dist/common.js");
       seajs.use("../dist/count.js");
       seajs.use("../dist/dropdown.js");
+      seajs.use("../dist/fonts/demo.html.js");
       seajs.use("../dist/message.js");
       seajs.use("../dist/robot.js");
   } else if (contain(query, 'cov')) {
@@ -99,14 +101,14 @@ jquery/jquery/1.7.2/jquery.js"></script>
     }
     return false;
   }
-      seajs.config({ alias: {"popup":"arale/popup/1.1.6/popup","overlay":"arale/overlay/1.1.4/overlay","mask":"arale/overlay/1.1.4/mask","position":"arale/position/1.0.1/position","iframe-shim":"arale/iframe-shim/1.0.2/iframe-shim","widget":"arale/widget/1.1.1/widget","base":"arale/base/1.1.1/base","templatable":"arale/templatable/0.9.2/templatable","handlebars":"gallery/handlebars/1.0.2/handlebars","xbox":"alipay/xbox/1.0.3/xbox","swfobject":"gallery/swfobject/2.2.0/swfobject","cookie":"arale/cookie/1.0.2/cookie","alice-base":"alice/base/1.0.2/base.css","grid":"alice/grid/1.0.0/grid.css"}});
+      seajs.config({ alias: {"$":"jquery/jquery/1.7.2/jquery","popup":"arale/popup/1.1.6/popup","overlay":"arale/overlay/1.1.4/overlay","mask":"arale/overlay/1.1.4/mask","position":"arale/position/1.0.1/position","iframe-shim":"arale/iframe-shim/1.0.2/iframe-shim","widget":"arale/widget/1.1.1/widget","base":"arale/base/1.1.1/base","templatable":"arale/templatable/0.9.2/templatable","handlebars":"gallery/handlebars/1.0.2/handlebars","xbox":"alipay/xbox/1.0.3/xbox","swfobject":"gallery/swfobject/2.2.0/swfobject","cookie":"arale/cookie/1.0.2/cookie","alice-base":"alice/base/1.0.2/base.css","grid":"alice/grid/1.0.0/grid.css"}});
     seajs.use(["alice/base/1.0.2/base.css","alice/grid/1.0.0/grid.css"]);
       seajs.config({ alias: {}});
 
     seajs.config({alias: {
       "$-debug": 'jquery/jquery/1.7.2/jquery-debug'
         ,"account": resolve("account.js")
-        ,"alice.common.v1-1.4.css": resolve("alice.common.v1-1.4.css")
+        ,"balance": resolve("balance.js")
         ,"birthday": resolve("birthday.js")
         ,"common.css": resolve("common.css")
         ,"common": resolve("common.js")
@@ -115,12 +117,12 @@ jquery/jquery/1.7.2/jquery.js"></script>
         ,"header.css": resolve("header.css")
         ,"iconfont.css": resolve("iconfont.css")
         ,"message": resolve("message.js")
-        ,"out.pa_new-1.0.css": resolve("out.pa_new-1.0.css")
         ,"robot": resolve("robot.js")
     }});
 
     // 加载依赖的 css 文件
     var cssArray = [];
+    cssArray.push('jquery/jquery/1.7.2/jquery');
     cssArray.push('arale/popup/1.1.6/popup');
     cssArray.push('arale/overlay/1.1.4/overlay');
     cssArray.push('arale/overlay/1.1.4/mask');

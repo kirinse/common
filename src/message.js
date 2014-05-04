@@ -37,7 +37,7 @@ define(function(require, exports, module) {
       var that = this;
       if (!messageReady) {
         $.ajax(URLCONFIG.popmessage, {
-          dataType: 'jsonp'
+          dataType: 'json'
         }).success(function(data) {
           if (data.stat !== 'ok') {
             return;
@@ -73,7 +73,7 @@ define(function(require, exports, module) {
       }).get().join(',');
       this.hide();
       this.$('#global-list-msg').html();
-      $.ajax(URLCONFIG.readmessage + msgIds, {dataType: 'jsonp'});
+      $.ajax(URLCONFIG.readmessage + msgIds, {dataType: 'json'});
     },
     // 标记单条消息为已读
     markRead: function(e) {
@@ -95,7 +95,7 @@ define(function(require, exports, module) {
       } else {
         msgConfirm.hide();
         setMsgRead.call(this, ele);
-        $.ajax(URLCONFIG.readmessage + msgId, {dataType: 'jsonp'});
+        $.ajax(URLCONFIG.readmessage + msgId, {dataType: 'json'});
       }
     },
     // 二次确认浮层，确定按钮
@@ -104,7 +104,7 @@ define(function(require, exports, module) {
       var msgId = $(this.currentConfirmMsg).parent().attr('data-id');
       this.$('#global-msg-confirm').hide();
       setMsgRead.call(this, this.currentConfirmMsg);
-      $.ajax(URLCONFIG.readmessage + msgId, {dataType: 'jsonp'});
+      $.ajax(URLCONFIG.readmessage + msgId, {dataType: 'json'});
     },
     // 二次确认浮层，取消按钮
     confirmCancel: function(e) {
@@ -120,7 +120,7 @@ define(function(require, exports, module) {
   // 获取消息数
   function getMessageCount(callback) {
     $.ajax(URLCONFIG.getmessage, {
-      dataType: 'jsonp'
+      dataType: 'json'
     }).success(function(data) {
       if (data.stat === 'ok') {
         var totalCount = parseInt(data.totalCount, 10);

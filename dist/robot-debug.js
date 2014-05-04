@@ -117,7 +117,7 @@ define("kirin/common/1.0.0/robot-debug", [ "jquery/jquery/1.7.2/jquery-debug", "
             if (!robotReady) {
                 robotReady = true;
                 $.ajax(URLCONFIG.roboturl, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat != "ok") {
                         Robot.superclass.show.call(that);

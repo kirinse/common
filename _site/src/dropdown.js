@@ -1,4 +1,4 @@
-define(["popup", "jquery", "overlay", "position", "iframe-shim", "widget", "base"], function(require, exports, module) {
+define(function(require, exports, module) {
   var Popup = require("popup");
   var Dropdown = Popup.extend({
     setup: function() {

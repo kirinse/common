@@ -84,7 +84,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             var that = this;
             if (!messageReady) {
                 $.ajax(URLCONFIG.popmessage, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat !== "ok") {
                         return;
@@ -121,7 +121,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             this.hide();
             this.$("#global-list-msg").html();
             $.ajax(URLCONFIG.readmessage + msgIds, {
-                dataType: "jsonp"
+                dataType: "json"
             });
         },
         // 标记单条消息为已读
@@ -145,7 +145,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
                 msgConfirm.hide();
                 setMsgRead.call(this, ele);
                 $.ajax(URLCONFIG.readmessage + msgId, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 });
             }
         },
@@ -156,7 +156,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             this.$("#global-msg-confirm").hide();
             setMsgRead.call(this, this.currentConfirmMsg);
             $.ajax(URLCONFIG.readmessage + msgId, {
-                dataType: "jsonp"
+                dataType: "json"
             });
         },
         // 二次确认浮层，取消按钮
@@ -173,7 +173,7 @@ define("kirin/common/1.0.0/message-debug", [ "jquery/jquery/1.7.2/jquery-debug",
     // 获取消息数
     function getMessageCount(callback) {
         $.ajax(URLCONFIG.getmessage, {
-            dataType: "jsonp"
+            dataType: "json"
         }).success(function(data) {
             if (data.stat === "ok") {
                 var totalCount = parseInt(data.totalCount, 10);
@@ -284,7 +284,7 @@ define("kirin/common/1.0.0/account-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             if (accountList.attr("data-user") === "true" && !accountReady) {
                 accountReady = true;
                 $.ajax(URLCONFIG.accounturl, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat != "ok") {
                         accountReady = false;
@@ -586,7 +586,7 @@ define("kirin/common/1.0.0/robot-debug", [ "jquery/jquery/1.7.2/jquery-debug", "
             if (!robotReady) {
                 robotReady = true;
                 $.ajax(URLCONFIG.roboturl, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat != "ok") {
                         Robot.superclass.show.call(that);
@@ -668,7 +668,7 @@ define("kirin/common/1.0.0/balance-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             if (!balanceReady) {
                 balanceReady = true;
                 $.ajax(URLCONFIG.balanceurl, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat != "ok") {
                         balanceReady = false;
@@ -689,7 +689,7 @@ define("kirin/common/1.0.0/balance-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             var balanceList = this.$("#global-list-more");
             balanceList.html("").addClass("global-loading");
             $.ajax(URLCONFIG.balanceurl, {
-                dataType: "jsonp"
+                dataType: "json"
             }).success(function(data) {
                 if (data.stat != "ok") {
                     balanceReady = false;

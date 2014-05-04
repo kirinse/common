@@ -26,7 +26,7 @@ define(function(require, exports, module) {
       if (accountList.attr('data-user') === 'true' && !accountReady) {
         accountReady = true;
         $.ajax(URLCONFIG.accounturl, {
-          dataType: 'jsonp'
+          dataType: 'json'
         }).success(function(data) {
           if (data.stat != 'ok') {
             accountReady = false;

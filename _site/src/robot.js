@@ -1,5 +1,5 @@
-define(["jquery", "templatable", "handlebars", "./dropdown", "popup", "overlay", "position", "iframe-shim", "widget", "base"], function(require, exports, module) {
-  var $ = require("jquery");
+define(function(require, exports, module) {
+  var $ = require("$");
   var Templatable = require("templatable");
   var Dropdown = require("./dropdown");
   var Handlebars = require("handlebars");
@@ -119,7 +119,7 @@ define(["jquery", "templatable", "handlebars", "./dropdown", "popup", "overlay",
       if (!robotReady) {
         robotReady = true;
         $.ajax(URLCONFIG.roboturl, {
-          dataType: 'jsonp'
+          dataType: 'json'
         }).success(function(data) {
           if (data.stat != 'ok') {
             Robot.superclass.show.call(that);

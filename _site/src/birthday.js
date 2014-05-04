@@ -1,5 +1,5 @@
-define(["jquery", "widget", "base", "swfobject", "cookie"], function(require, exports, module) {
-  var $ = require("jquery");
+define(function(require, exports, module) {
+  var $ = require("$");
   var Widget = require("widget");
   var swfobject = require("swfobject");
   var Cookie = require("cookie");

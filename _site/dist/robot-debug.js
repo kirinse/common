@@ -1,8 +1,8 @@
-define("kirin/common/1.0.0/robot-debug", [ "jquery-debug", "templatable-debug", "handlebars-debug", "./dropdown-debug", "popup-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug" ], function(require, exports, module) {
-    var $ = require("jquery-debug");
-    var Templatable = require("templatable-debug");
+define("kirin/common/1.0.0/robot-debug", [ "jquery/jquery/1.7.2/jquery-debug", "arale/templatable/0.9.2/templatable-debug", "$-debug", "gallery/handlebars/1.0.2/handlebars-debug", "./dropdown-debug", "arale/popup/1.1.6/popup-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug" ], function(require, exports, module) {
+    var $ = require("jquery/jquery/1.7.2/jquery-debug");
+    var Templatable = require("arale/templatable/0.9.2/templatable-debug");
     var Dropdown = require("./dropdown-debug");
-    var Handlebars = require("handlebars-debug");
+    var Handlebars = require("gallery/handlebars/1.0.2/handlebars-debug");
     var robotReady = false;
     var global = window.GLOBAL || {};
     var URLCONFIG = {
@@ -117,7 +117,7 @@ define("kirin/common/1.0.0/robot-debug", [ "jquery-debug", "templatable-debug", 
             if (!robotReady) {
                 robotReady = true;
                 $.ajax(URLCONFIG.roboturl, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat != "ok") {
                         Robot.superclass.show.call(that);
@@ -177,8 +177,8 @@ define("kirin/common/1.0.0/robot-debug", [ "jquery-debug", "templatable-debug", 
     }
 });
 
-define("kirin/common/1.0.0/dropdown-debug", [ "popup-debug", "jquery-debug", "overlay-debug", "position-debug", "iframe-shim-debug", "widget-debug", "base-debug" ], function(require, exports, module) {
-    var Popup = require("popup-debug");
+define("kirin/common/1.0.0/dropdown-debug", [ "arale/popup/1.1.6/popup-debug", "$-debug", "arale/overlay/1.1.4/overlay-debug", "arale/position/1.0.1/position-debug", "arale/iframe-shim/1.0.2/iframe-shim-debug", "arale/widget/1.1.1/widget-debug", "arale/base/1.1.1/base-debug", "arale/class/1.1.0/class-debug", "arale/events/1.1.0/events-debug" ], function(require, exports, module) {
+    var Popup = require("arale/popup/1.1.6/popup-debug");
     var Dropdown = Popup.extend({
         setup: function() {
             Dropdown.superclass.setup.call(this);

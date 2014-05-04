@@ -26,7 +26,7 @@ define("kirin/common/1.0.0/account-debug", [ "jquery/jquery/1.7.2/jquery-debug",
             if (accountList.attr("data-user") === "true" && !accountReady) {
                 accountReady = true;
                 $.ajax(URLCONFIG.accounturl, {
-                    dataType: "jsonp"
+                    dataType: "json"
                 }).success(function(data) {
                     if (data.stat != "ok") {
                         accountReady = false;
