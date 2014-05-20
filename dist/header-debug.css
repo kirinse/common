@@ -434,13 +434,13 @@ html, body {
 #sports .nav-item-link{
   width:32px;
   margin-right:42px;
-  background-position:-15px -370px;
+  background-position:-15px -371px;
 }
 #sports .nav-item-link:hover{
-  background-position:-15px -415px;
+  background-position:-15px -416px;
 }
 #sports .nav-item-link-active{
-  background-position:-15px -415px;
+  background-position:-15px -416px;
 }
 #sports .nav-item-sub{
   right:20px;
@@ -449,13 +449,13 @@ html, body {
 #game .nav-item-link{
   width:64px;
   margin-right:42px;
-  background-position:-15px -460px;
+  background-position:-15px -461px;
 }
 #game .nav-item-link:hover{
-  background-position:-15px -505px;
+  background-position:-15px -506px;
 }
 #game .nav-item-link-active{
-  background-position:-15px -505px;
+  background-position:-15px -506px;
 }
 #game .nav-item-sub{
   right:20px;
@@ -464,13 +464,13 @@ html, body {
 #promo .nav-item-link{
   width:32px;
   margin-right:42px;
-  background-position:-15px -550px;
+  background-position:-15px -551px;
 }
 #promo .nav-item-link:hover{
-  background-position:-15px -595px;
+  background-position:-15px -596px;
 }
 #promo .nav-item-link-active{
-  background-position:-15px -595px;
+  background-position:-15px -596px;
 }
 #promo .nav-item-sub{
   right:20px;
@@ -487,13 +487,13 @@ html, body {
 #help .nav-item-link{
   width:32px;
   float:left;
-  background-position:-15px -640px;
+  background-position:-15px -641px;
 }
 #help .nav-item-link:hover{
-  background-position:-15px -685px;
+  background-position:-15px -686px;
 }
 #help .nav-item-link-active{
-  background-position:-15px -685px;
+  background-position:-15px -686px;
 }
 #help .angle{
   right:28px;

@@ -223,3 +223,9 @@ a.global-toplink-robot,a.global-toplink-robot:hover{color:#666;text-decoration:n
 .global-xbox-content{width:100%;height:100%}
 .global-xbox-mask{opacity:.6;filter:alpha(opacity=60);-moz-opacity:.6;background:black}
 #global-refresh-balance{display:block;text-align:right;padding:8px 8px 0 8px;}
+.footer-container {
+  margin: 0 auto;
+  display: block;
+  float: none;
+  padding: 15px 0;
+}
