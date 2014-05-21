@@ -1,10 +1,10 @@
 @font-face {
   font-family: "iconfont";
-  src: url("/static/kirin/common/1.0.0/fonts/iconfont.eot"); /* IE9*/
-  src: url("/static/kirin/common/1.0.0/fonts/iconfont.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-       url("/static/kirin/common/1.0.0/fonts/iconfont.woff") format("woff"), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
-       url("/static/kirin/common/1.0.0/fonts/iconfont.ttf")  format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-       url("/static/kirin/common/1.0.0/fonts/iconfont.svg#rei") format("svg"); /*  iOS 4.1- */
+  src: url("http://asset.kirin.com/static/kirin/common/1.0.0/fonts/iconfont.eot"); /* IE9*/
+  src: url("http://asset.kirin.com/static/kirin/common/1.0.0/fonts/iconfont.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+       url("http://asset.kirin.com/static/kirin/common/1.0.0/fonts/iconfont.woff") format("woff"), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
+       url("http://asset.kirin.com/static/kirin/common/1.0.0/fonts/iconfont.ttf")  format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+       url("http://asset.kirin.com/static/kirin/common/1.0.0/fonts/iconfont.svg#rei") format("svg"); /*  iOS 4.1- */
   font-weight: normal;
   font-style: normal;
 }
@@ -21,7 +21,7 @@
 .iconfont.home, .iconfont.lobby {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\3432');
 }
-/*用户*/
+/* 个人中心 */
 .iconfont.user:before {
   content: '\E606';
 }
@@ -29,6 +29,128 @@
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\E606');
   background: #fff;
   font-size: 14px;
+}
+.yes {
+  display: inline-block;
+  margin-right: 10px;
+  color: #b5de6f;
+  font-size: 22px;
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0f0156');
+}
+.yes:before {
+  content: "\0f0156";
+}
+.no {
+  display: inline-block;
+  margin-right: 10px;
+  color: #ff9966;
+  font-size: 22px;
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\E64F');
+}
+.no:before {
+  content: '\E64F';
+}
+.ico-authen, .ico-safeguard, .ico-mobile {
+  font-size:42px;
+  color: #9ecde6;
+}
+.ico-authen-no, .ico-safeguard-no, .ico-mobile-no {
+  font-size:42px;
+  color: #c2c2c2;  
+}
+.ico-authen:before, .ico-authen-no:before{
+  content:'\0F00BB';
+}
+.ico-authen, .ico-authen-no{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0F00BB');  
+}
+.ico-safeguard:before, .ico-safeguard-no:before{
+  content:'\0F0138';
+}
+.ico-safeguard, .ico-safeguard-no{
+  font-size:52px;
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0F0138');  
+}
+.ico-mobile:before, .ico-mobile-no:before{
+  content:'\0f00a2';
+}
+.ico-mobile, .ico-mobile-no{
+  font-size:52px;
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0f00a2');  
+}
+/* 默认头像 */
+.avatar:before{
+  content: '\0f0027';  
+}
+.avatar{
+  font-size:72px;
+  width: 84px;
+  height: 84px;
+  display:inline-block;
+  text-align:center;
+  color: #666;
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0f0027');    
+}
+/* 通栏小图标之实名认证状态(身份证、资金保障、手机绑定) */
+.i-banner-stat-certify-0:before, .i-banner-stat-certify-1:before{
+  content:'\0f01a1';
+}
+.i-banner-stat-certify-0, .i-banner-stat-certify-1{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0f01a1');    
+}
+.i-banner-stat-safeguard-0:before, .i-banner-stat-safeguard-1:before{
+  content:'\0f0103';
+}
+.i-banner-stat-safeguard-0, .i-banner-stat-safeguard-1{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0f0103');    
+}
+.i-banner-stat-mobile-0:before, .i-banner-stat-mobile-1:before{
+  content:'\0f00a2';
+}
+.i-banner-stat-mobile-0, .i-banner-stat-mobile-1{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0f00a2');    
+}
+.i-banner-stat-certify-0, .i-banner-stat-safeguard-0, .i-banner-stat-mobile-0, .i-banner-stat-certify-1, .i-banner-stat-safeguard-1, .i-banner-stat-mobile-1{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 18px;
+  margin-right: 5px;
+  border: 1px solid #ecde7b;
+  border-radius: 50%;
+  text-indent: 2px;
+  font-size: 12px;
+  color: #ecde7b;
+  cursor: pointer;
+}
+.i-banner-stat-certify-1, .i-banner-stat-safeguard-1, .i-banner-stat-mobile-1{
+  border: 1px solid #ccc;
+  color: #ccc;  
+}
+/* 左侧导航 */
+.third-nav-link .home:before{
+  content:'\3432';
+}
+.third-nav-link .home{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\3432');    
+}
+.third-nav-link .safe:before{
+  content:'\0f0030';
+}
+.third-nav-link .safe{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0f0030');    
+}
+.third-nav-link .team:before{
+  content:'\3441';
+}
+.third-nav-link .team{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\3441');    
+}
+.third-nav-link .message:before{
+  content:'\0f00be';
+}
+.third-nav-link .message{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\0f00be');    
 }
 /*钱包(余额)*/
 .iconfont.balance:before {
