@@ -347,10 +347,7 @@ define("kirin/common/1.0.0/account-debug", [ "jquery/jquery/1.7.2/jquery-debug",
     function getXbox() {
         if (!xbox) {
             xbox = new Xbox({
-                type: "iframe",
-                classPrefix: "global-xbox",
-                isOld: true,
-                height: "300px"
+                width: 720
             }).render();
         }
         return xbox;

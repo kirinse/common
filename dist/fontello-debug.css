@@ -312,14 +312,14 @@
 }
 .ui-tipbox-notselected .iconfont{
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e859');
-  color:#ccc;
+  color:#ccc!important;
 }
 .ui-tipbox-selected .iconfont:before{
   content:'\e81e';
 }
 .ui-tipbox-selected .iconfont{
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e81e');
-  color:#598e00;
+  color:#598e00!important;
 }
 .iconfont.ico-history:before{
   content:'\e80a';
@@ -348,7 +348,7 @@
   content:'\e8a1';
 }
 .express-status .iconfont{
-  color: #b5de6f;
+  color: #08c;
   font-size: 14px;
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e8a1');  
 }
@@ -358,6 +358,18 @@
 .ui-tipbox-icon .ico-warn{
   color: #f96;
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e829');  
+}
+.iconfont.mark:before{
+  content:'\e89a';
+}
+.iconfont.mark{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e89a');
+}
+.iconfont.check:before{
+  content:'\e8be';
+}
+.iconfont.check{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e8be');
 }
 /* 转账 */
 .arrow .iconfont:before{
@@ -448,5 +460,19 @@
 }
 .iconfont.c360{
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e80c');
+  font-size: 20px;
+}
+.ui-icon-user .username:before{
+  content:'\e86d';
+}
+.ui-icon-user .username{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e86d');
+  font-size: 20px;
+}
+.ui-icon-security .password:before{
+  content:'\e81d';
+}
+.ui-icon-security .password{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e81d');
   font-size: 20px;
 }

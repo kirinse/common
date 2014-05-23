@@ -89,10 +89,10 @@ define(function(require, exports, module) {
   function getXbox() {
     if (!xbox) {
       xbox = new Xbox({
-        type: 'iframe',
-        classPrefix: 'global-xbox',
-        isOld: true,
-        height: '300px'
+        // type: 'iframe',
+        // classPrefix: 'global-xbox',
+        // isOld: true,
+        // height: '300px'
       }).render(); // 待 overlay 改造后去掉 hide #106
     }
     return xbox;

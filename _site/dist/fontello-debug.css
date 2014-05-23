@@ -443,3 +443,24 @@
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e831');
   font-size: 20px;
 }
+.iconfont.c360:before{
+  content:'\e80c';
+}
+.iconfont.c360{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e80c');
+  font-size: 20px;
+}
+.ui-icon-user .username:before{
+  content:'\e86d';
+}
+.ui-icon-user .username{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e86d');
+  font-size: 20px;
+}
+.ui-icon-security .password:before{
+  content:'\e81d';
+}
+.ui-icon-security .password{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e81d');
+  font-size: 20px;
+}
