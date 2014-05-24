@@ -89,6 +89,7 @@ define(function(require, exports, module) {
   function getXbox() {
     if (!xbox) {
       xbox = new Xbox({
+        width:720
         // type: 'iframe',
         // classPrefix: 'global-xbox',
         // isOld: true,
