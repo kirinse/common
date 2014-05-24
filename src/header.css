@@ -19,7 +19,13 @@ html, body {
   display:block;
   float:none;
 }
-
+.shadow{
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  position:relative;
+  z-index:102;
+}
 /* logo */
 #kirin-img-logo {
   margin-right: 5px;
