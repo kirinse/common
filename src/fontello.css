@@ -513,3 +513,22 @@
 .ui-paging-next .iconfont{
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e84d');
 }
+/* 找回密码 */
+.iconfont.recommend:before{
+  content:'\e8a3';
+}
+.iconfont.recommend{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e8a3');
+}
+.iconfont.question:before{
+  content:'\e82e';
+}
+.iconfont.question{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e82e');
+}
+.iconfont.manual:before{
+  content:'\e825';
+}
+.iconfont.manual{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e825');
+}
