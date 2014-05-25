@@ -532,3 +532,23 @@
 .iconfont.manual{
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e825');
 }
+/* 注册 */
+.ui-step-diamond .iconfont:before{
+  content:'\e800';
+}
+.ui-step-diamond .iconfont{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e800');
+}
+.ui-step-diamond .iconfont.ui-step-number:before{
+  content:'\e8ca';
+}
+.ui-step-diamond .iconfont.ui-step-number{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e8ca');
+}
+.iconfont.dropdown:before{
+  content:'\e83b';
+}
+.iconfont.dropdown{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e83b');
+  font-size: 20px;
+}
