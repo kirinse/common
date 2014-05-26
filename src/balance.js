@@ -61,15 +61,7 @@ define(function(require, exports, module) {
   // ------
   function renderBalance(model, parentNode) {
     var i = 0, infoModel = {infos: model.infos};
-    var template = Handlebars.compile('{{#infos}}<li><div>
-                        <span class="app" title="{{{app}}}">
-                          {{{app}}}: 
-                        </span>
-                        <span class="amount">
-                          <i class="iconfont amount"></i>
-                          {{{balance}}}
-                        </span>
-                      </div></li>{{/infos}}');
+    var template = Handlebars.compile('{{#infos}}<li><div><span class="app" title="{{{app}}}">{{{app}}}:</span><span class="amount"><i class="iconfont amount"></i>{{{balance}}}</span></div></li>{{/infos}}');
     parentNode.html(template(infoModel)).removeClass('global-loading');
   }
 });

@@ -221,18 +221,18 @@
   font-size: 12px;
 }
 /* 我的团队 */
-.iconfont.ui-list-addmember:before{
+.iconfont.addmember:before{
   content:'\e87a';
 }
-.iconfont.ui-list-addmember{
+.iconfont.addmember{
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e87a');
 /*  color:#fff!important;*/
 }
 /* 消息中心 */
-.iconfont.ui-list-sendmsg:before{
+.iconfont.sendmsg:before{
   content:'\e873';
 }
-.iconfont.ui-list-sendmsg{
+.iconfont.sendmsg{
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e873');
 /*  color:#fff!important;*/
 }
@@ -492,5 +492,64 @@
 }
 .iconfont.success{
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e8a1');
+  font-size: 20px;
+}
+.iconfont.info:before{
+  content:'\e83a';
+}
+.iconfont.info{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e83a');
+  font-size: 20px;
+}
+/* 分页 */
+.ui-paging-prev .iconfont:before{
+  content:'\e852';
+}
+.ui-paging-prev .iconfont{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e852');
+}
+.ui-paging-next .iconfont:before{
+  content:'\e84d';
+}
+.ui-paging-next .iconfont{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e84d');
+}
+/* 找回密码 */
+.iconfont.recommend:before{
+  content:'\e8a3';
+}
+.iconfont.recommend{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e8a3');
+}
+.iconfont.question:before{
+  content:'\e82e';
+}
+.iconfont.question{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e82e');
+}
+.iconfont.manual:before{
+  content:'\e825';
+}
+.iconfont.manual{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e825');
+}
+/* 注册 */
+.ui-step-diamond .iconfont:before{
+  content:'\e800';
+}
+.ui-step-diamond .iconfont{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e800');
+}
+.ui-step-diamond .iconfont.ui-step-number:before{
+  content:'\e8ca';
+}
+.ui-step-diamond .iconfont.ui-step-number{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e8ca');
+}
+.iconfont.dropdown:before{
+  content:'\e83b';
+}
+.iconfont.dropdown{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e83b');
   font-size: 20px;
 }

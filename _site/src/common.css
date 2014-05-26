@@ -72,7 +72,7 @@ ul.global-subnav span{padding:0 15px;height:28px;line-height:28px;*line-height:3
 .global-toplink a.global-toplink-msg{padding:1px 6px;-moz-border-radius:2px 2px;-webkit-border-radius:2px 2px;-o-border-radius:2px 2px;border-radius:2px 2px;background:#d9d9d9;color:#484848;line-height:16px;vertical-align:middle}
 @-moz-document url-prefix(){.global-toplink .global-toplink-i,.global-toplink .global-toplink-user,.global-toplink .global-toplink-more,.global-toplink .global-toplink-msg{height:16px}
 }
-.global-dropdown-active a.global-toplink-msg,#global-header-msg a.global-toplink-msg-active{background:#08c;color:#fff}
+.global-dropdown-active a.global-toplink-msg,#global-header-msg a.global-toplink-msg-active{background:#00a8ff;color:#fff}
 .global-dropdown-active a.global-toplink-msg:hover,#global-header-msg a.global-toplink-msg-active:hover{color:#FFF}
 .global-toplink a.global-toplink-msg:hover{text-decoration:none}
 .global-toplink a.global-toplink-msg span{padding-left:4px}
@@ -247,4 +247,7 @@ a.global-toplink-robot,a.global-toplink-robot:hover{color:#666;text-decoration:n
   padding: 0 8px;
   border-right: 1px solid #cccccc;
   line-height: 14px;
+}
+.ui-link-item-last{
+  border-right:0;
 }
