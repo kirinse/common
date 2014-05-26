@@ -63,7 +63,7 @@ define("kirin/common/1.0.0/balance-debug", [ "jquery/jquery/1.7.2/jquery-debug",
         var i = 0, infoModel = {
             infos: model.infos
         };
-        var template = Handlebars.compile('{{#infos}}<li><div>\n                        <span class="app" title="{{{app}}}">\n                          {{{app}}}: \n                        </span>\n                        <span class="amount">\n                          <i class="iconfont amount"></i>\n                          {{{balance}}}\n                        </span>\n                      </div></li>{{/infos}}');
+        var template = Handlebars.compile('{{#infos}}<li><div><span class="app" title="{{{app}}}">{{{app}}}:</span><span class="amount"><i class="iconfont amount"></i>{{{balance}}}</span></div></li>{{/infos}}');
         parentNode.html(template(infoModel)).removeClass("global-loading");
     }
 });

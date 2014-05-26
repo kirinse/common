@@ -173,7 +173,7 @@ div.global-button,p.global-button,span.global-button{*display:inline}
 .global-feedback a{cursor:pointer;display:block;overflow:hidden;position:relative;text-indent:-999em;width:30px;height:89px;background:url(/static/images/feedback.png) no-repeat scroll transparent;background-position:-30px 0;background-position:0 0\9;box-shadow:0 100px 100px rgba(255,255,255,0.3) inset;-webkit-transition:all .25s ease-in;-moz-transition:all .25s ease-in;transition:all .25s ease-in}
 .global-feedback a:hover{background-position:-30px 0\9;box-shadow:0 100px 100px rgba(255,255,255,0) inset;-webkit-transition:all .25s ease-in;-moz-transition:all .25s ease-in;transition:all .25s ease-in}
 .global-onlineservice{display:inline;position:absolute;right:0;top:88px;z-index:9999}
-.global-birth{right:0;position:absolute;padding:8px 5px 0 0;z-index:101}
+.global-birth{right:10px;position:absolute;padding:8px 5px 0 0;z-index:101}
 .global-birth-icon{position:relative;display:block;background:url(/static/images/repeat-x.png) -60px -1733px no-repeat;width:20px;height:16px;overflow:hidden;text-indent:-100px;z-index:10}
 .global-birth-tip{position:absolute;width:90px;height:24px;line-height:24px;text-align:center;top:2px;left:-103px}
 .global-birth-tip-content{position:relative;height:100%;width:100%;border:1px solid #dea90c;background:#ffff8d;z-index:2}
