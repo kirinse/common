@@ -5,7 +5,7 @@ define("kirin/common/1.0.0/balance-debug", [ "jquery/jquery/1.7.2/jquery-debug",
     var balanceReady = false;
     var global = window.GLOBAL || {};
     var URLCONFIG = {
-        balanceurl: global.system.personal + "/ajax/balance/getBalance.json?_callback=?"
+        balanceurl: /*global.system.personal + */ "/app/kirinResource/funds/getBalance"
     };
     var Balance = Dropdown.extend({
         events: {

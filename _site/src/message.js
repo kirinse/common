@@ -7,10 +7,10 @@ define(function(require, exports, module) {
   var Count = require("./count");
   var global = window.GLOBAL || {}, messageReady = false;
   var URLCONFIG = {
-    redirecturl: global.system.personal + '/ajax/messages/modifyStatusAndRedirect.html',
-    getmessage: global.system.personal + '/ajax/messages/getMsgInfosNew.json?_callback=?',
-    popmessage: global.system.personal + '/ajax/messages/popMsgInfos.json?_callback=?',
-    readmessage: global.system.personal + '/ajax/messages/readMsg.json?_callback=?&historySource=I&msgIds='
+    redirecturl: /*global.system.personal + */'/app/kirinResource/messageCenter/modifyStatusAndRedirect.html',
+    getmessage: /*global.system.personal + */'/app/kirinResource/messageCenter/getMsgInfosNew',
+    popmessage: /*global.system.personal + */'/app/kirinResource/messageCenter/popMsgInfos',
+    readmessage: /*global.system.personal + */'/app/kirinResource/messageCenter/readMsg?&historySource=I&msgIds='
   };
   var Message = Dropdown.extend({
     Implements: Templatable,
