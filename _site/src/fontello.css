@@ -552,3 +552,19 @@
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e83b');
   font-size: 20px;
 }
+.iconfont.plus:before, .ui-accordion-trigger .iconfont:before{
+  content:'\e88b';
+}
+.iconfont.plus, .ui-accordion-trigger .iconfont{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e88b');
+  font-size: 16px;
+  cursor:pointer;
+}
+.iconfont.minus:before, .ui-accordion-active .iconfont:before{
+  content:'\e87e';
+}
+.iconfont.minus, .ui-accordion-active .iconfont{
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '\e87e');
+  font-size: 16px;
+  cursor:pointer;
+}
