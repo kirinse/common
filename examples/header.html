@@ -222,8 +222,8 @@
                     apimg: "https://i.alipayobjects.com",
                     assets: "https://a.alipayobjects.com"
                   },
-                  today:'20140420',
-                  birthday: '0420'
+                  today:'20140420'//,
+                  // birthday: '0420'
                 };
                 seajs.use(['common', 'jquery', 'popup'],function(v1, $, Popup){
                   var Birthday = v1.Birthday;
@@ -237,8 +237,8 @@
                   var moreEl = $('#global-header-more');
                   var iEl = $('#global-header-i');
                   var robotEl = $('#global-header-robot');
-                  GLOBAL.isBirthday = Birthday.isBirthday;
-                  if(Birthday.isBirthday){
+                  GLOBAL.isBirthday = Birthday.isBirthday('0420');
+                  if(GLOBAL.isBirthday){
                     GLOBAL.Birthday = new Birthday({
                       template: $('#global-template-birth').html(),
                       parentNode: $('#global-header-area')[0]

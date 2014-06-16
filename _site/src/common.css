@@ -2,7 +2,7 @@
 .the-kirin-global{font:normal 12px/1.5 Verdana,Arial,\5b8b\4f53,sans-serif;height:45px;}
 .the-kirin-global *{margin:0;padding:0;font-style:normal;font-weight:normal;font-size:100%}
 .the-kirin-global ol,.the-kirin-global ul{list-style:none}
-.the-kirin-global a{text-decoration:none;color:#08C}
+.the-kirin-global a{text-decoration:none;color:#666!important}
 .the-kirin-global .sl-alpha{padding:0 2px 2px;border-top:2px solid #e0e0e0;background:rgba(0,0,0,0.1);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#1b000000',EndColorStr='#1b000000')}
 :root .the-kirin-global .sl-alpha{filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#1b000000',EndColorStr='#1b000000')}
 .the-kirin-global .fn-clear{zoom:1}

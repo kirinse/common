@@ -11,7 +11,7 @@ define("kirin/common/1.0.0/birthday-debug", [ "jquery/jquery/1.7.2/jquery-debug"
             mode: 1
         },
         Statics: {
-            isBirthday: isBirthday()
+            isBirthday: isBirthday
         },
         events: {
             "hover .global-birth-icon": "toggleTip",
@@ -90,7 +90,7 @@ define("kirin/common/1.0.0/birthday-debug", [ "jquery/jquery/1.7.2/jquery-debug"
         return /^\d{2}$/.test(month) ? month + "" : "0" + month;
     }
     // 检测当天是否是用户生日
-    function isBirthday() {
-        return global.birthday && global.today.slice(4) === global.birthday;
+    function isBirthday(birthday) {
+        return birthday && global.today.slice(4) === birthday;
     }
 });

@@ -11,7 +11,7 @@ define(function(require, exports, module) {
         mode: 1
       },
       Statics: {
-        isBirthday: isBirthday()
+        isBirthday: isBirthday
       },
       events: {
         'hover .global-birth-icon': 'toggleTip',
@@ -96,7 +96,8 @@ define(function(require, exports, module) {
     return /^\d{2}$/.test(month) ? month + '' : '0' + month;
   }
   // 检测当天是否是用户生日
-  function isBirthday() {
-    return global.birthday && global.today.slice(4) === global.birthday;
+  function isBirthday(birthday) {
+    return birthday && global.today.slice(4) === birthday;
+    // return global.birthday && global.today.slice(4) === global.birthday;
   }
 });
