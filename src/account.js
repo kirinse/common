@@ -6,8 +6,8 @@ define(function(require, exports, module) {
   var accountReady = false;
   var global = window.GLOBAL || {};
   var URLCONFIG = {
-    loginurl: global.system.authcenter + '/login/xbox.htm?loginScene=x&change=true&logonId=',
-    accounturl: global.system.personal + '/home/statusbar/getRelativeAccounts.json?_callback=?'
+    loginurl: '/login/xbox.htm?loginScene=x&change=true&logonId=',
+    accounturl: '/home/statusbar/getRelativeAccounts.json?_callback=?'
   };
   var Account = Dropdown.extend({
     events: {

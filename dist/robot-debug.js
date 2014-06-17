@@ -6,7 +6,7 @@ define("kirin/common/1.0.0/robot-debug", [ "jquery/jquery/1.7.2/jquery-debug", "
     var robotReady = false;
     var global = window.GLOBAL || {};
     var URLCONFIG = {
-        roboturl: global.system.personalportal + "/portal/robot/getRobotData.json?_callback=?"
+        roboturl: "/portal/robot/getRobotData.json?_callback=?"
     };
     var Robot = Dropdown.extend({
         Implements: Templatable,

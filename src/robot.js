@@ -8,7 +8,7 @@ define(function(require, exports, module) {
 
   var global = window.GLOBAL || {};
   var URLCONFIG = {
-    roboturl: global.system.personalportal + '/portal/robot/getRobotData.json?_callback=?'
+    roboturl: '/portal/robot/getRobotData.json?_callback=?'
   };
   var Robot = Dropdown.extend({
     Implements: Templatable,
